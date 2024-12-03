@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กระผมเอง</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .text-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 10px; /* เพิ่มช่องว่างระหว่างกรอบ */
+            border-radius: 15px;
+            border: 2px solid #FFD700; /* กรอบสีทอง */
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* เงาสีทอง */
+            width: 300px; /* ปรับขนาดให้พอดีกับเนื้อหา */
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+     .text-box a { color: #FFD700; /* สีของลิงก์ */ font-weight: 900; /* ความหนาของตัวอักษร */ text-decoration: none; }
+
+        .text-box a:hover { color: #FF4500; /* สีของลิงก์เมื่อเอาเมาส์วาง */}
+    </style>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const links = document.querySelectorAll('.text-box a');
+            const x = e.clientX;
+            const y = e.clientY;
+            links.forEach(link => {
+                const rect = link.getBoundingClientRect();
+                const offsetX = x - rect.left;
+                const offsetY = y - rect.top;
+                const colorValueX = Math.floor((offsetX / rect.width) * 255);
+                const colorValueY = Math.floor((offsetY / rect.height) * 255);
+                link.style.color = `rgb(${colorValueX}, ${colorValueY}, 150)`;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="d:\VIfdflod\UFg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            <img class="image-overlay" src="d:\VIfdflod\ggh.jpg" alt="d:\VIfdflod\ggh.jpg">
+        </video>
+        <div class="text-overlay"> 
+            <div class="text-box">
+                <section id="IG"> 
+               <h1><a href="https://www.instagram.com/songkran0123?fbclid=IwZXh0bgNhZW0CMTAAAR0c3ymkQv5H6qNvJkQAkyRIJ7d0Z819v5uCkQ-qXH8lRpZO2b2O_ZselbQ_aem_Dz9V1NUgCMO4iU624jY_Vw" target="_blank" class="button" href="#about"><b>IG</b></a></h1>
+            </section>
+            </div> 
+        <div class="text-box">
+            <section id="Facebook">
+            <h1><a href="https://www.facebook.com/songkran.boonserm.2024" target="_blank" class="button" href="#about"><b>Facebook</b></a></h1>
+            </section>
+        </div>   
+     </div>
+    </div>
+</body>
+</html> 
